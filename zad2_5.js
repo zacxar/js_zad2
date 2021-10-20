@@ -1,10 +1,12 @@
 //Zadanie 5
 console.log("\nZADANIE 5\n---------");
 
-let nazwy = ["jajka", "cebula", "mleko", "masło", "chleb", "czekolada", "płatki", "mąka", "ryż", "cukier"];
+let nazwy = "jajka, cebula, mleko, masło, chleb, czekolada, płatki, mąka, ryż, cukier";
 var obiekty = [];
 
-for (let el of nazwy) {
+let tablicanazw = nazwy.split(', ');
+
+for (let el of tablicanazw) {
     let nowyobj = {
         nazwa: el,
         cena: (Math.random() * 10 + 1).toFixed(2)
@@ -16,7 +18,7 @@ console.log("\nTablica obiektów:");
 console.table(obiekty);
 
 var losoweobiekty = obiekty;
-var ileobiektow = parseInt(Math.random() * (nazwy.length / 2 - 1) + 2)
+var ileobiektow = parseInt(Math.random() * (tablicanazw.length / 2 - 1) + 2)
 losoweobiekty = losoweobiekty.sort(() => Math.random() - Math.random()).slice(0, ileobiektow);
 
 var zakupy = [];
